@@ -113,7 +113,7 @@ let carModelsSorted = inventory.sort(compareFunction);
 console.log(carModelsSorted);
 
 // Stretch Challenge 3
-stretchCarModels = inventory.sort((a,b) => {
+stretchCarModels = inventory.sort((a, b) => {
   const modelA = a.car_model.toUpperCase();
   const modelB = b.car_model.toUpperCase();
   let comparison = 0;
@@ -135,10 +135,10 @@ for (let i = 0; i < inventory.length; i++) {
 console.log(carYears);
 
 // Stretch challenge 4
-let stretchCarYears = []
-inventory.forEach(car => {
-  stretchCarYears.push(car.car_year)
-})
+let stretchCarYears = inventory.map(car => car.car_year)
+// inventory.forEach(car => {
+//   stretchCarYears.push(car.car_year)
+// })
 console.log(stretchCarYears)
 
 // ==== Challenge 5 ====
@@ -152,7 +152,7 @@ for (let i = 0; i < carYears.length; i++) {
 console.log(oldCars.length);
 
 // Stretch challenge 5
-let stretchOldCars = carYears.filter(year => year > 2000).length
+let stretchOldCars = stretchCarYears.filter(year => year > 2000).length
 console.log(stretchOldCars)
 
 
@@ -167,12 +167,3 @@ for (let i = 0; i < inventory.length; i++) {
 console.log(JSON.stringify(BMWAndAudi));
 
 console.log("----------------------")
-
-// stretch challenge 6
-let stretchBMWAndAudi = []
-inventory.map(car => {
-  if (car.car_make === "BMW" || car.car_make === "Audi") {
-    return car
-  }
-})
-console.log(JSON.stringify(stretchBMWAndAudi))
